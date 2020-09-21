@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>Árvores</title>
+
+{% if trees %}
+    <h1>Árvores plantadas</h1>
+    {% for tree in trees %}
+        <li>
+            <p>Título: {{ tree.title }}</p>
+            <p>Mensagem: {{ tree.message }}</p>
+            <p>Votos: {{ tree.votes }}</p>
+            <form action="/votar/{{ tree.tree_id }}" method="post">
+                <input type="submit" value="Votar">
+            </form>
+        </li>
+    {% endfor %}
+{% else %}
+    <h1>Não há árvores plantadas</h1>
+{% endif %}
