@@ -7,9 +7,9 @@
         <li>
             <p>Título: {{ tree.title }}</p>
             <p>Mensagem: {{ tree.message }}</p>
-            <p>Votos: {{ tree.votes }}</p>
+            <p>Foi regada {{ tree.votes }} vezes</p>
             <form action="/votar/{{ tree.tree_id }}" method="post">
-                <input type="submit" value="Votar">
+                <input type="submit" value="Regar">
             </form>
         </li>
     {% endfor %}
