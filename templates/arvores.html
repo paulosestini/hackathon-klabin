@@ -16,9 +16,8 @@
         <div class="header"><h1>Cresça sua Ideia</h1></div>
         {% for tree in trees %}
         <li class="ideia">
-            <p><div class="titulo">{{ tree.title }}</div></p>
             
-                <script type=text/javascript>
+            <script type=text/javascript>
                     $(function() {
                         $('input#vote{{tree.tree_id}}').bind('click', function(){
                             $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
@@ -29,6 +28,7 @@
                         });
                     });
                 </script>
+                <div class="titulo"><span>{{ tree.title }}</span></div>
                 <div class="background">
                     <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
                     <p class="mensagem">{{ tree.message }}</p>
