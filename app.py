@@ -5,7 +5,11 @@ app = Flask(__name__)
 
 trees = [
     Tree(0, "Uniformes novos", "Os uniformes em nossa unidade estão antigos, seria muito legal uma nova coleção"),
-    Tree(1, "Melhores fones anti-ruído", "Há muito ruído na fábrica, seria legal termos fones de melhor qualidade!")
+    Tree(1, "Melhores fones anti-ruído", "Há muito ruído na fábrica, seria legal termos fones de melhor qualidade!"),
+    Tree(2, "Camila", "a melhor do grupinho"),
+    Tree(3, "Bernardo", "o artista sofredor"),
+    Tree(4, "Paulo", "o nerd"),
+    Tree(5, "Stephanie", "...")
 ] 
 
 @app.route('/arvores')

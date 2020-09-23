@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<title>Árvores</title>
 
-{% if trees %}
-    <h1>Árvores plantadas</h1>
-    {% for tree in trees %}
-    <li>
-        <p>Título: {{ tree.title }}</p>
-            <img src="static/{{tree.stage}}.png">
+<head> 
+    <title>Cresça sua Ideia</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="fundo">
+    {% if trees %}
+        <h1><div class="header">Cresça sua Ideia</h1></div>
+        {% for tree in trees %}
+        <li class="ideia">
+            <p><div class="titulo">{{ tree.title }}</div></p>
+                <img src="static/{{tree.stage}}.png">
 
-            <p>Mensagem: {{ tree.message }}</p>
-            <p>Foi regada {{ tree.votes }} vezes</p>
-            <form action="/votar/{{ tree.tree_id }}" method="post">
-                <input type="submit" value="Regar">
-            </form>
-        </li>
-    {% endfor %}
-{% else %}
-    <h1>Não há árvores plantadas</h1>
-{% endif %}
+                <p>{{ tree.message }}</p>
+                <p>Foi regada {{ tree.votes }} vezes</p>
+                <form action="/votar/{{ tree.tree_id }}" method="post">
+                    <input type="submit" value="Regar">
+                </form>
+            </li>
+        {% endfor %}
+    {% else %}
+        <h1>Não há árvores plantadas</h1>
+    {% endif %}
+</body>
