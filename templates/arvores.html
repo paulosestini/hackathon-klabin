@@ -30,10 +30,10 @@
                     });
                 </script>
                 <div class="background">
-                    <img id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
+                    <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
                     <p class="mensagem">{{ tree.message }}</p>
                     <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
-                    <input type="submit" href=# id=vote{{tree.tree_id}} value=Regar>
+                    <input class="btn" type="submit" href=# id=vote{{tree.tree_id}} value=Regar>
                 </div>
             </li>
         {% endfor %}
