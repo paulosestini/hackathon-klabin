@@ -18,7 +18,7 @@
         <li class="ideia">
             <p><div class="titulo">{{ tree.title }}</div></p>
             
-            <script type=text/javascript>
+                <script type=text/javascript>
                     $(function() {
                         $('input#vote{{tree.tree_id}}').bind('click', function(){
                             $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
