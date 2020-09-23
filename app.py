@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from tree import Tree
 
 app = Flask(__name__)
@@ -16,8 +16,9 @@ trees = [
 def page_arvores():
     return render_template('arvores.html', trees=sorted(trees, key=lambda x: x.votes, reverse=True))
 
-@app.route('/votar/<tree_id>', methods=["POST"])
+@app.route('/votar/<tree_id>', methods=["GET"])
 def vote_on_tree(tree_id=None):
-    next(filter(lambda x: x.tree_id == int(tree_id), trees)).vote()
-    return redirect('/arvores')
+    tree = next(filter(lambda x: x.tree_id == int(tree_id), trees))
+    tree.vote()
+    return jsonify(votes=tree.votes, stage=tree.stage)
 

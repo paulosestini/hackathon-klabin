@@ -5,18 +5,36 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body class="fundo">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
+
     {% if trees %}
-        <h1><div class="header">Cresça sua Ideia</h1></div>
+        <div class="header"><h1>Cresça sua Ideia</h1></div>
         {% for tree in trees %}
         <li class="ideia">
             <p><div class="titulo">{{ tree.title }}</div></p>
-                <img src="static/{{tree.stage}}.png">
-
-                <p>{{ tree.message }}</p>
-                <p>Foi regada {{ tree.votes }} vezes</p>
-                <form action="/votar/{{ tree.tree_id }}" method="post">
-                    <input type="submit" value="Regar">
-                </form>
+            
+            <script type=text/javascript>
+                    $(function() {
+                        $('input#vote{{tree.tree_id}}').bind('click', function(){
+                            $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
+                                $("#votes{{tree.tree_id}}").text(data.votes);
+                                $("#stage{{tree.tree_id}}").attr('src', 'static/' + data.stage + '.png');
+                            });
+                            return false;
+                        });
+                    });
+                </script>
+                <div class="background">
+                    <img id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
+                    <p class="mensagem">{{ tree.message }}</p>
+                    <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
+                    <input type="submit" href=# id=vote{{tree.tree_id}} value=Regar>
+                </div>
             </li>
         {% endfor %}
     {% else %}
