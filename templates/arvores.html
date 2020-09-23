@@ -19,7 +19,7 @@
             
             <script type=text/javascript>
                     $(function() {
-                        $('input#vote{{tree.tree_id}}').bind('click', function(){
+                        $('button#vote{{tree.tree_id}}').bind('click', function(){
                             $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
                                 $("#votes{{tree.tree_id}}").text(data.votes);
                                 $("#stage{{tree.tree_id}}").attr('src', 'static/' + data.stage + '.png');
@@ -33,7 +33,11 @@
                     <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
                     <p class="mensagem">{{ tree.message }}</p>
                     <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
-                    <input class="btn" type="submit" href=# id=vote{{tree.tree_id}} value=Regar>
+
+                    <button class="btn" type="button" href=# id=vote{{tree.tree_id}} value=Regar>
+                        <img class="water-img" src="static/water.svg">
+                    </button>
+                
                 </div>
             </li>
         {% endfor %}
