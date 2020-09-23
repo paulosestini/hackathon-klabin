@@ -5,20 +5,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.body {
-  background-image: url("img_tree.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-}
-
 .ideia{
   background-color: transparent;
   min-width: 20%;
   max-width: 20vw;
   max-height: 20%;
-  /*border: 1px solid #f1f1f1; */
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 .titulo{
@@ -49,6 +40,7 @@
 }
 .mensagem{
     text-align: justify;
+    margin-top: 2vw;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
 }
@@ -85,8 +77,5 @@
 }
 
 .imagem{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    margin-top: 2vw;
 }
