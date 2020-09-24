@@ -33,6 +33,10 @@ def home():
 def mapa():
     return render_template('mapa.html')
 
+@app.route('/nlp')
+def nlp():
+    return render_template('NLP.html')
+
 @app.after_request
 def add_header(response):
     """
