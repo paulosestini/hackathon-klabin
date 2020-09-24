@@ -1,0 +1,22 @@
+.fundo {
+  background-image: url ("background.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+.vazio{
+    height: 1088px;
+}
+
+.banner{
+    margin: 0px;
+    font-size: 18px;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.banner.h1{
+
+}

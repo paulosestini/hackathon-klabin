@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="{{url_for('static', filename='flipCard.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='style_fundo_1.css')}}">
 </head>
-<body class="fundo">
+<body class="fundo" style="background:#0b3720 url('/static/background.png') no-repeat center top " >
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <script type=text/javascript>
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
 
+    <div class="banner">
+        <div class="vazio">
+            <h1> CRESCA SUA IDEIA</h1>
+        </div>
+    </div>
+
 
     {% if trees %}
         <div class="header"><h1>Cresça sua Ideia</h1></div>
-        <div class="floresta_conteiner">
+        <div class="floresta_conteiner"  >
             <div class="floresta">
                 {% for tree in trees %}
                 <div class="flip-card ideia"  >
