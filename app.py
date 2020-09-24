@@ -25,6 +25,9 @@ def vote_on_tree(tree_id=None):
     tree.vote()
     return jsonify(votes=tree.votes, stage=tree.stage)
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 @app.after_request
 def add_header(response):

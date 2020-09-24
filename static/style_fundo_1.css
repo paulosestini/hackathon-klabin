@@ -1,12 +1,14 @@
 .fundo {
-  background-image: url ("background.png");
+  background-image: url("background.png");
+  height: 100px;
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .vazio{
-    height: 1088px;
+    height: 9vw;
 }
 
 .banner{
