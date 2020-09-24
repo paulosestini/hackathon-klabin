@@ -4,13 +4,16 @@ from tree import Tree
 app = Flask(__name__)
 
 trees = [
-    Tree(0, "Uniformes novos", "Os uniformes em nossa unidade estão antigos, seria muito legal uma nova coleção"),
-    Tree(1, "Melhores fones anti-ruído", "Há muito ruído na fábrica, seria legal termos fones de melhor qualidade!"),
-    Tree(2, "Camila", "a melhor do grupinho"),
-    Tree(3, "Bernardo", "o artista sofredor"),
-    Tree(4, "Paulo", "o nerd"),
-    Tree(5, "Stephanie", "...")
-] 
+    Tree(0, "Teste 1", "No mundo atual, o acompanhamento das preferências de consumo nos obriga à análise dos relacionamentos verticais entre as hierarquias. Por outro lado, a valorização de fatores subjetivos é uma das consequências do fluxo de informações. A prática cotidiana prova que a revolução dos costumes pode nos levar a considerar a reestruturação do sistema de participação geral."),
+    Tree(1, "Teste 2", "Percebemos, cada vez mais, que a consulta aos diversos militantes estende o alcance e a importância das diversas correntes de pensamento. Por outro lado, o desafiador cenário globalizado acarreta um processo de reformulação e modernização das novas proposições. A prática cotidiana prova que a revolução dos costumes faz parte de um processo de gerenciamento dos níveis de motivação departamental."),
+    Tree(2, "Teste 3", "O cuidado em identificar pontos críticos na constante divulgação das informações desafia a capacidade de equalização dos relacionamentos verticais entre as hierarquias. Assim mesmo, o desafiador cenário globalizado pode nos levar a considerar a reestruturação do retorno esperado a longo prazo. No mundo atual, a complexidade dos estudos efetuados cumpre um papel essencial na formulação do orçamento setorial. Caros amigos, o acompanhamento das preferências de consumo representa uma abertura para a melhoria do investimento em reciclagem técnica."),
+    Tree(3, "Teste 4", "No mundo atual, o acompanhamento das preferências de consumo nos obriga à análise dos relacionamentos verticais entre as hierarquias. Por outro lado, a valorização de fatores subjetivos é uma das consequências do fluxo de informações. A prática cotidiana prova que a revolução dos costumes pode nos levar a considerar a reestruturação do sistema de participação geral."),
+    Tree(4, "Teste 5",
+         "Percebemos, cada vez mais, que a consulta aos diversos militantes estende o alcance e a importância das diversas correntes de pensamento. Por outro lado, o desafiador cenário globalizado acarreta um processo de reformulação e modernização das novas proposições. A prática cotidiana prova que a revolução dos costumes faz parte de um processo de gerenciamento dos níveis de motivação departamental."),
+    Tree(5, "Teste 70",
+         "O cuidado em identificar pontos críticos na constante divulgação das informações desafia a capacidade de equalização dos relacionamentos verticais entre as hierarquias. Assim mesmo, o desafiador cenário globalizado pode nos levar a considerar a reestruturação do retorno esperado a longo prazo. No mundo atual, a complexidade dos estudos efetuados cumpre um papel essencial na formulação do orçamento setorial. Caros amigos, o acompanhamento das preferências de consumo representa uma abertura para a melhoria do investimento em reciclagem técnica.")
+
+]
 
 @app.route('/arvores')
 def page_arvores():
@@ -22,3 +25,16 @@ def vote_on_tree(tree_id=None):
     tree.vote()
     return jsonify(votes=tree.votes, stage=tree.stage)
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.after_request
+def add_header(response):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
