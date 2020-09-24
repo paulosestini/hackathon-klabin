@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e819fd0-35bd-41f1-bca8-043d7a782810" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/flipCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/style2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/style_floresta.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/style_fundo_1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/arvores.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/arvores.html" afterDir="false" />
     </list>

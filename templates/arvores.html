@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style2.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='style_floresta.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='flipCard.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style_fundo_1.css')}}">
 </head>
 <body class="fundo">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -16,46 +17,46 @@
 
     {% if trees %}
         <div class="header"><h1>Cresça sua Ideia</h1></div>
+        <div class="floresta_conteiner">
+            <div class="floresta">
+                {% for tree in trees %}
+                <div class="flip-card ideia"  >
+                     <div class="titulo"><span>{{ tree.title }}</span></div>
+                    <div class="flip-card-inner">
 
-        <div class="floresta">
-            {% for tree in trees %}
-            <div class="flip-card ideia"  >
-                 <div class="titulo"><span>{{ tree.title }}</span></div>
-                <div class="flip-card-inner">
-
-                    <script type=text/javascript>
-                            $(function() {
-                                $('button#vote{{tree.tree_id}}').bind('click', function(){
-                                    $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
-                                        $("#votes{{tree.tree_id}}").text(data.votes);
-                                        $("#stage{{tree.tree_id}}").attr('src', 'static/' + data.stage + '.png');
+                        <script type=text/javascript>
+                                $(function() {
+                                    $('button#vote{{tree.tree_id}}').bind('click', function(){
+                                        $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
+                                            $("#votes{{tree.tree_id}}").text(data.votes);
+                                            $("#stage{{tree.tree_id}}").attr('src', 'static/' + data.stage + '.png');
+                                        });
+                                        return false;
                                     });
-                                    return false;
                                 });
-                            });
-                    </script>
+                        </script>
 
-                    <div class="bloco">
-                        <div class="frente">
-                            <div class=" flip-card-front">
-                                <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
+                        <div class="bloco">
+                            <div class="frente">
+                                <div class=" flip-card-front">
+                                    <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
+                                </div>
                             </div>
-                        </div>
-                        <div class="atras">
-                            <div class="flip-card-back">
-                                <p class="mensagem">{{ tree.message }}</p>
-                                <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
+                            <div class="atras">
+                                <div class="flip-card-back">
+                                    <p class="mensagem">{{ tree.message }}</p>
+                                    <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
 
-                                <button class="btn" type="button" href=# id=vote{{tree.tree_id}} value=Regar>
-                                    <img class="water-img" src="static/water.svg">
-                                </button>
+                                    <button class="btn" type="button" href=# id=vote{{tree.tree_id}} value=Regar>
+                                        <img class="water-img" src="static/water.svg">
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
             {% endfor %}
+            </div>
         </div>
 
     {% else %}

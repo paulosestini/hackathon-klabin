@@ -5,13 +5,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.body {
-  background-image: url("img_tree.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-}
-
 .ideia{
   background-color: transparent;
   min-width: 20%;
