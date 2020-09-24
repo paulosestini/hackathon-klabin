@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<html>
 <head> 
     <title>Cresça sua Ideia</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
@@ -15,35 +16,35 @@
             <li><a class="active" href="/arvores">Árvores</a></li>
             <li><a href="/mapa">Mapa</a></li>
             <li><a href="/nlp">NLP</a></li>
-
+            
         </ul>
         
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
+    
     <script type=text/javascript>
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
 
-    <!--
-        
-        <div class="banner">
-            <div class="vazio">
-                <div class="header"><h1>Cresça sua Ideia</h1></div>
-            </div>
+<!--
+    
+    <div class="banner">
+        <div class="vazio">
+            <div class="header"><h1>Cresça sua Ideia</h1></div>
         </div>
-        
-    -->
+    </div>
+    
+-->
 
-    {% if trees %}
-        <div class="floresta_container"  >
-            <div class="floresta">
-                {% for tree in trees %}
-                <div class="flip-card ideia"  >
-                     <div class="titulo"><span>{{ tree.title }}</span></div>
-                    <div class="flip-card-inner">
-
-                        <script type=text/javascript>
+{% if trees %}
+<div class="floresta_container"  >
+    <div class="floresta">
+        {% for tree in trees %}
+        <div class="flip-card ideia"  >
+            <div class="titulo"><span>{{ tree.title }}</span></div>
+            <div class="flip-card-inner">
+                
+                <script type=text/javascript>
                                 $(function() {
                                     $('button#vote{{tree.tree_id}}').bind('click', function(){
                                         $.getJSON($SCRIPT_ROOT + '/votar/{{ tree.tree_id }}', {}, function(data){
@@ -55,30 +56,32 @@
                                 });
                         </script>
 
-                        <div class="bloco">
-                            <div class="frente">
-                                <div class=" flip-card-front">
-                                    <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
-                                </div>
-                            </div>
-                            <div class="atras">
-                                <div class="flip-card-back">
-                                    <p class="mensagem">{{ tree.message }}</p>
-                                    <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
-
-                                    <button class="btn" type="button" href=# id=vote{{tree.tree_id}} value=Regar>
-                                        <img class="water-img" src="static/water.svg">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-            </div>
+<div class="bloco">
+    <div class="frente">
+        <div class=" flip-card-front">
+            <img class="imagem" id="stage{{tree.tree_id}}" src="static/{{tree.stage}}.png">
         </div>
+    </div>
+    <div class="atras">
+        <div class="flip-card-back">
+            <p class="mensagem">{{ tree.message }}</p>
+            <p>Foi regada <span id="votes{{tree.tree_id}}">{{ tree.votes }}</span> vezes</p>
+            
+            <button class="btn" type="button" href=# id=vote{{tree.tree_id}} value=Regar>
+                <img class="water-img" src="static/water.svg">
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
 
-    {% else %}
-        <h1>Não há árvores plantadas</h1>
-    {% endif %}
+{% else %}
+<h1>Não há árvores plantadas</h1>
+{% endif %}
 </body>
+
+</html>
