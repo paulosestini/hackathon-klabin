@@ -1,5 +1,5 @@
 .fundo{
-    color:#7F5526;
+    color:white;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -16,10 +16,10 @@
     color: #DFDFA2;
     background-color: #7F5526;
     outline: 3px solid #412A10;
-    margin-top: 3%;
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
+    margin-top: 4vw;
 }
 
 .header{
