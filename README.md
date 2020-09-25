@@ -24,6 +24,7 @@ Há também como personalizar a Word Cloud, e para dar uma melhor caracterizaç�
 
 # Tecnologias utilizadas
 O site foi construído utilizando a linguagem Python, em conjunto com a biblioteca Flask. Para a criação do mapa e da word cloud, foram utilizadas outras bibliotecas.
+
 Principais bibliotecas utilizadas:
 * Flask - Framework
 * Plotly - Criação do Mapa
