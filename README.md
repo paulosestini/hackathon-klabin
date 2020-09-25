@@ -2,7 +2,7 @@
 ![Cresça sua Ideia](https://i.ibb.co/4PLHzVP/cresca-ideia.png)
 
 ## O que é?
-O **Cresça sua Ideia** é uma plataforma criada para o hackathon da Klabin/Empathy, cuja proposta era colaborar com melhorias para o robô **Luna**, uma coruja interativa por meio da qual os funcionários da empresa podem enviar ideias e sugestões para a Klabin.
+A **Cresça sua Ideia** é uma plataforma criada para o hackathon da Klabin/Empathy, cuja proposta era colaborar com melhorias para o robô **Luna**, uma coruja interativa por meio da qual os funcionários da empresa podem enviar ideias e sugestões para a Klabin.
 
 ## Floresta de ideias
 A Plataforma visa aumentar a interatividade dos funcionários com as ideias geradas por estes. Cada funcionário pode plantar uma ideia, em formato de árvore, e outros funcionários podem regar esta ideia, para que ela floresça.
