@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Peddana&display=swap');
+
 .fundo{
     color:white;
     text-align: center;
@@ -14,11 +16,9 @@
 .titulo{
     font-size: 160%;
     color: #DFDFA2;
-    background-color: #7F5526;
-    outline: 3px solid #412A10;
-    margin-left: 5%;
+    background-color: #412A10;
     margin-right: 5%;
-    width: 90%;
+    width: 100%;
     margin-top: 4vw;
 }
 
@@ -89,7 +89,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color:  #412A10;
 }
 
 li {
@@ -102,11 +102,13 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #412A10;
+    transition: 0.3s;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #7F5526;
 }
 
 .active {
@@ -129,9 +131,55 @@ li a:hover {
 }
 
 .explicacao p{
+    font-family: 'Oswald', sans-serif;
     text-align: justify;
-    width: 20vw;
+    width: 50vw;
+    color: white;
+    font-size: 150%;
+    margin-left: 10vw;
+}
+
+.explicacao2{
+    font-family: 'Oswald', sans-serif;
+    text-align: justify;
+    color: white;
+    font-size: 170%;
+    margin-left: 50vw;
+    margin-bottom: -10vw;
+    margin-top: 8vw;
+}
+
+.nome_projeto{
+    text-align: justify;
+    font-size: 150%;
+    width: 50vw;
     color: white;
     font-size: larger;
     margin-left: 10vw;
+}
+
+.wordcloud{
+    margin-top: 2vw;
+    width:40vw;
+    height:40vw;
+    border: 3px solid rgba(0, 64, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mapa { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: auto;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+.plotly-graph-div{
+    align-content: center;
+    align-self: center;
+    border: 3px solid rgba(0, 64, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
