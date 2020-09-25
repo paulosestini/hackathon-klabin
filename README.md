@@ -17,7 +17,7 @@ O mapa de ideias é um mapa interativo que permite visualizar de onde as ideias 
 ## NLP e Word Cloud
 Quando se trata de ideias e textos, é interessante utilizar *Processamento de Linguagem Natural(NLP)* para analisar o conteúdo das mensagens. A plataforma utiliza a ideia de *Word Cloud*, uma técnica de exploração visual de dados em NLP, que consiste em criar uma nuvem de palavras para visualizar quais mais aparecem nas mensagens, assim, palavras que são usadas com frequência aparecem maiores e com maior destaque.
 
-Há também como personalizar a Word Cloud, e para dar uma melhor caracterização, foi utilizada um formato de coruja em um galho para construir a nuvem, fazendo referência à Luna.
+Há também como personalizar a Word Cloud, e para dar uma melhor caracterização, foi utilizado um formato de coruja em um galho para construir a nuvem, fazendo referência à Luna.
 
 ![Word Cloud](https://i.ibb.co/nQcjgsm/Screenshot-from-2020-09-25-10-05-08.png)
 
