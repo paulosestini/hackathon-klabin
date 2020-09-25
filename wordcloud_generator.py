@@ -1,0 +1,44 @@
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import numpy as np
+from tree import Tree
+from PIL import Image
+import matplotlib.pyplot as plt
+
+trees = [
+    Tree(0, "Teste 1", "No mundo atual, o acompanhamento das preferências de consumo nos obriga à análise dos relacionamentos verticais entre as hierarquias. Por outro lado, a valorização de fatores subjetivos é uma das consequências do fluxo de informações. A prática cotidiana prova que a revolução dos costumes pode nos levar a considerar a reestruturação do sistema de participação geral."),
+    Tree(1, "Teste 2", "Percebemos, cada vez mais, que a consulta aos diversos militantes estende o alcance e a importância das diversas correntes de pensamento. Por outro lado, o desafiador cenário globalizado acarreta um processo de reformulação e modernização das novas proposições. A prática cotidiana prova que a revolução dos costumes faz parte de um processo de gerenciamento dos níveis de motivação departamental."),
+    Tree(2, "Teste 3", "O cuidado em identificar pontos críticos na constante divulgação das informações desafia a capacidade de equalização dos relacionamentos verticais entre as hierarquias. Assim mesmo, o desafiador cenário globalizado pode nos levar a considerar a reestruturação do retorno esperado a longo prazo. No mundo atual, a complexidade dos estudos efetuados cumpre um papel essencial na formulação do orçamento setorial. Caros amigos, o acompanhamento das preferências de consumo representa uma abertura para a melhoria do investimento em reciclagem técnica."),
+    Tree(3, "Teste 4", "No mundo atual, o acompanhamento das preferências de consumo nos obriga à análise dos relacionamentos verticais entre as hierarquias. Por outro lado, a valorização de fatores subjetivos é uma das consequências do fluxo de informações. A prática cotidiana prova que a revolução dos costumes pode nos levar a considerar a reestruturação do sistema de participação geral."),
+    Tree(4, "Teste 5", "Percebemos, cada vez mais, que a consulta aos diversos militantes estende o alcance e a importância das diversas correntes de pensamento. Por outro lado, o desafiador cenário globalizado acarreta um processo de reformulação e modernização das novas proposições. A prática cotidiana prova que a revolução dos costumes faz parte de um processo de gerenciamento dos níveis de motivação departamental."),
+    Tree(5, "Teste 70", "O cuidado em identificar pontos críticos na constante divulgação das informações desafia a capacidade de equalização dos relacionamentos verticais entre as hierarquias. Assim mesmo, o desafiador cenário globalizado pode nos levar a considerar a reestruturação do retorno esperado a longo prazo. No mundo atual, a complexidade dos estudos efetuados cumpre um papel essencial na formulação do orçamento setorial. Caros amigos, o acompanhamento das preferências de consumo representa uma abertura para a melhoria do investimento em reciclagem técnica."),
+    Tree(6, "asdasd", "No mundo atual, a execução dos pontos do programa deve passar por modificações independentemente das condições financeiras e administrativas exigidas. Caros amigos, o consenso sobre a necessidade de qualificação assume importantes posições no estabelecimento dos métodos utilizados na avaliação de resultados. Acima de tudo, é fundamental ressaltar que a percepção das dificuldades estende o alcance e a importância do sistema de participação geral. No entanto, não podemos esquecer que a valorização de fatores subjetivos prepara-nos para enfrentar situações atípicas decorrentes dos níveis de motivação departamental."),
+    Tree(7, "asdasd", "Do mesmo modo, o desenvolvimento contínuo de distintas formas de atuação obstaculiza a apreciação da importância das direções preferenciais no sentido do progresso. Evidentemente, o desafiador cenário globalizado estimula a padronização do sistema de formação de quadros que corresponde às necessidades. Percebemos, cada vez mais, que a estrutura atual da organização facilita a criação do retorno esperado a longo prazo. Por conseguinte, a contínua expansão de nossa atividade acarreta um processo de reformulação e modernização das condições inegavelmente apropriadas."),
+    Tree(8, "asdasd", "Por outro lado, a consulta aos diversos militantes oferece uma interessante oportunidade para verificação do investimento em reciclagem técnica. O incentivo ao avanço tecnológico, assim como a complexidade dos estudos efetuados garante a contribuição de um grupo importante na determinação das formas de ação. Pensando mais a longo prazo, a expansão dos mercados mundiais pode nos levar a considerar a reestruturação do impacto na agilidade decisória. As experiências acumuladas demonstram que a mobilidade dos capitais internacionais maximiza as possibilidades por conta dos relacionamentos verticais entre as hierarquias. Gostaria de enfatizar que o fenômeno da Internet exige a precisão e a definição dos procedimentos normalmente adotados."),
+    Tree(9, "asdasd", "Ainda assim, existem dúvidas a respeito de como a adoção de políticas descentralizadoras talvez venha a ressaltar a relatividade dos conhecimentos estratégicos para atingir a excelência. Não obstante, o novo modelo estrutural aqui preconizado auxilia a preparação e a composição de todos os recursos funcionais envolvidos. Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se a necessidade de renovação processual representa uma abertura para a melhoria dos índices pretendidos."),
+    Tree(10, "asdasd", "Pensando mais a longo prazo, o julgamento imparcial das eventualidades obstaculiza a apreciação da importância do impacto na agilidade decisória. Evidentemente, o comprometimento entre as equipes apresenta tendências no sentido de aprovar a manutenção das diretrizes de desenvolvimento para o futuro. Percebemos, cada vez mais, que o consenso sobre a necessidade de qualificação faz parte de um processo de gerenciamento da gestão inovadora da qual fazemos parte. A nível organizacional, a contínua expansão de nossa atividade assume importantes posições no estabelecimento das formas de ação."),
+    Tree(11, "asdasd", "Não obstante, o início da atividade geral de formação de atitudes facilita a criação de todos os recursos funcionais envolvidos. O incentivo ao avanço tecnológico, assim como o fenômeno da Internet garante a contribuição de um grupo importante na determinação das novas proposições. No entanto, não podemos esquecer que a expansão dos mercados mundiais causa impacto indireto na reavaliação dos métodos utilizados na avaliação de resultados. É importante questionar o quanto a crescente influência da mídia maximiza as possibilidades por conta dos relacionamentos verticais entre as hierarquias."),
+    Tree(12, "asdasd", "A certificação de metodologias que nos auxiliam a lidar com a estrutura atual da organização representa uma abertura para a melhoria do fluxo de informações. As experiências acumuladas demonstram que a competitividade nas transações comerciais desafia a capacidade de equalização do retorno esperado a longo prazo. Por conseguinte, a consulta aos diversos militantes aponta para a melhoria das condições inegavelmente apropriadas. Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o surgimento do comércio virtual é uma das consequências do sistema de participação geral. O que temos que ter sempre em mente é que a percepção das dificuldades auxilia a preparação e a composição dos paradigmas corporativos."),
+    Tree(13, "asdasd", "O que temos que ter sempre em mente é que a contínua expansão de nossa atividade maximiza as possibilidades por conta das condições inegavelmente apropriadas. No entanto, não podemos esquecer que o julgamento imparcial das eventualidades garante a contribuição de um grupo importante na determinação do fluxo de informações. Acima de tudo, é fundamental ressaltar que a necessidade de renovação processual auxilia a preparação e a composição das direções preferenciais no sentido do progresso. Assim mesmo, o acompanhamento das preferências de consumo exige a precisão e a definição do processo de comunicação como um todo."),
+
+]
+
+messages = []
+for tree in trees:
+    messages.append(tree.message)
+text = ' '.join(messages)
+
+stopwords = set(STOPWORDS)
+stopwords.update(["da", "meu", "em", "você", "de", "ao", "os", "das", "dos", "por", "que", "no", "na"])
+
+owl_mask = np.array(Image.open("static/owl_branch.png"))
+
+my_wordcloud = WordCloud(stopwords=stopwords,mask=owl_mask,
+                      background_color="white",
+                      width=1600, height=800).generate(text)
+
+fig, ax = plt.subplots(figsize=(10,6))
+ax.imshow(my_wordcloud, interpolation='bilinear')
+ax.set_axis_off()
+
+plt.imshow(my_wordcloud);
+my_wordcloud.to_file("static/wordcloud.png")

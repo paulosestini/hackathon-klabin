@@ -29,6 +29,14 @@ def vote_on_tree(tree_id=None):
 def home():
     return render_template('home.html')
 
+@app.route('/mapa')
+def mapa():
+    return render_template('mapa.html')
+
+@app.route('/nlp')
+def nlp():
+    return render_template('NLP.html')
+
 @app.after_request
 def add_header(response):
     """
