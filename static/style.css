@@ -14,11 +14,9 @@
 .titulo{
     font-size: 160%;
     color: #DFDFA2;
-    background-color: #7F5526;
-    outline: 3px solid #412A10;
-    margin-left: 5%;
+    background-color: #412A10;
     margin-right: 5%;
-    width: 90%;
+    width: 100%;
     margin-top: 4vw;
 }
 
@@ -89,7 +87,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color:  #412A10;
 }
 
 li {
@@ -102,11 +100,13 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #412A10;
+    transition: 0.3s;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #7F5526;
 }
 
 .active {
