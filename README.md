@@ -21,6 +21,11 @@ Há também como personalizar a Word Cloud, e para dar uma melhor caracterizaç�
 
 ![Word Cloud](https://i.ibb.co/nQcjgsm/Screenshot-from-2020-09-25-10-05-08.png)
 
+## Quais são os ganhos obtidos com o uso dessa plataforma?
+
+A Cresça Sua Ideia faz com que os funcionários não somente possam interagir com a empresa, mas também com que eles interajam entre si na criação de ideias, criando maior harmonia e estreitando laços, o que pode aumentar o engajamento e fazer com que as ideias que atendam a muitas pessoas e sejam mais relevantes ganhem maior voz.
+
+Isto pode otimizar o processamento das sugestões, tornando a Luna mais eficiente em atender aos objetivos da Klabin e às necessidades de seus trabalhadores.
 
 # Tecnologias utilizadas
 O site foi construído utilizando a linguagem Python, em conjunto com a biblioteca Flask. Para a criação do mapa e da word cloud, foram utilizadas outras bibliotecas.
