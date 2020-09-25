@@ -36,7 +36,7 @@ Algumas bibliotecas auxiliares utilizadas:
 * Pandas
 
 ## Como executar o site
-Com a biblioteca Flask instalada, abra o terminal e rode os seguintes comandos:
+Com a biblioteca Flask instalada, abra o terminal na pasta do site e rode os seguintes comandos:
 
 No Linux:
 ```
