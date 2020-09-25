@@ -61,6 +61,8 @@ Imagem utilizada de máscara para a word cloud: https://www.clipart.email/downlo
 
 Floresta de fundo do site: https://www.vecteezy.com/vector-art/181748-abstract-forest-landscape
 
+Ícone do botão de regar: https://www.flaticon.com/free-icon/water-drop_3105761?term=water&page=1&position=2
+
 
 
 
